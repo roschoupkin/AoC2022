@@ -7,7 +7,9 @@
   "author": "roschoupkin",
   "license": "UNLICENSED",
   "scripts": {
-    "test": "jest --watch=false",
+    "test": "jest",
+    "test:01": "npm run test -- -t=01",
+    "test:02": "npm run test -- -t=02",
     "prepare": "husky install"
   },
   "devDependencies": {
