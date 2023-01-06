@@ -1,7 +1,7 @@
 module.exports = {
   verbose: true,
   preset: 'ts-jest',
-  displayName: 'typesafe-react-routes',
+  displayName: 'AoC2022',
   testMatch: ['**/?(*.)test.ts?(x)'],
   transformIgnorePatterns: ['/node_modules/'],
   transform: {
