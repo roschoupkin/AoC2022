@@ -1,5 +1,5 @@
-import { Puzzle } from '../helpers/Puzzle';
-import { convertToTotal } from './utils';
+import { Puzzle } from '../utils/Puzzle';
+import { convertToTotal } from './utils/utils';
 
 export function two(paths: string) {
   const { puzzle } = new Puzzle(paths).parts('\n\n').convert(convertToTotal);

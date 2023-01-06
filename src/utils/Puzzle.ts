@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { ArrayType } from './ArrayType';
+import { ArrayType } from '../types/ArrayType';
 
 class PuzzleParts<T extends unknown[]> {
   public get puzzle() {

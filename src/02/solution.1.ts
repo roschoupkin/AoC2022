@@ -1,7 +1,7 @@
-import { Puzzle } from '../helpers/Puzzle';
-import { convertToAction } from './utils';
-import { EResultCost } from './types';
-import { AWAITED_TO_WIN, RIVAL_COMMAND_MAP } from './consts';
+import { Puzzle } from '../utils/Puzzle';
+import { convertToAction } from './utils/utils';
+import { EResultCost } from './utils/types';
+import { AWAITED_TO_WIN, RIVAL_COMMAND_MAP } from './utils/consts';
 
 const MY_COMMANDS_MAP = {
   X: EResultCost.Lose,
