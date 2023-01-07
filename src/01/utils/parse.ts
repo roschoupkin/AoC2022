@@ -1,4 +1,4 @@
-import { readPuzzle } from '../../utils/puzzle';
+import { splitPuzzle } from '../../utils/puzzle';
 
 function convert(line: string) {
   return line.split('\n').reduce((total, value) => {
@@ -11,5 +11,5 @@ function convert(line: string) {
 }
 
 export function parse(paths: string) {
-  return readPuzzle(paths, '\n\n').map(convert);
+  return splitPuzzle(paths, '\n\n').map(convert);
 }

@@ -1,16 +1,14 @@
 import { findIntersection, getWeights } from './utils/utils';
 import { parse } from './utils/parse';
 
-export function two(paths: string) {
-  const puzzle = parse(paths);
-
+function solution(parsed: ReturnType<typeof parse>) {
   let total = 0;
 
-  for (let i = 0; i < puzzle.length; i += 3) {
+  for (let i = 0; i < parsed.length; i += 3) {
     const intersection = findIntersection(
-      getWeights(puzzle[i]),
-      getWeights(puzzle[i + 1]),
-      getWeights(puzzle[i + 2])
+      getWeights(parsed[i]),
+      getWeights(parsed[i + 1]),
+      getWeights(parsed[i + 2])
     );
 
     if (intersection) {
@@ -20,3 +18,5 @@ export function two(paths: string) {
 
   return total;
 }
+
+export const two = (paths: string) => solution(parse(paths));

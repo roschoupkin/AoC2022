@@ -1,5 +1,7 @@
 import { parse } from './utils/parse';
 
-export function one(paths: string) {
-  return parse(paths).reduce((largest, amount) => (amount > largest ? amount : largest), 0);
+function solution(parsed: ReturnType<typeof parse>) {
+  return parsed.reduce((largest, amount) => (amount > largest ? amount : largest), 0);
 }
+
+export const one = (paths: string) => solution(parse(paths));

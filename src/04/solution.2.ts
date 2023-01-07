@@ -1,12 +1,10 @@
 import { isPartiallyContain } from './utils/utils';
 import { parse } from './utils/parse';
 
-export function two(paths: string) {
+function solution(parsed: ReturnType<typeof parse>) {
   let response = 0;
 
-  const puzzle = parse(paths);
-
-  for (const [left, right] of puzzle) {
+  for (const [left, right] of parsed) {
     if (isPartiallyContain(left, right) || isPartiallyContain(right, left)) {
       response++;
     }
@@ -14,3 +12,5 @@ export function two(paths: string) {
 
   return response;
 }
+
+export const two = (paths: string) => solution(parse(paths));

@@ -1,12 +1,10 @@
 import { isFullyContain } from './utils/utils';
 import { parse } from './utils/parse';
 
-export function one(paths: string) {
+function solution(parsed: ReturnType<typeof parse>) {
   let response = 0;
 
-  const puzzle = parse(paths);
-
-  for (const [left, right] of puzzle) {
+  for (const [left, right] of parsed) {
     if (isFullyContain(left, right) || isFullyContain(right, left)) {
       response++;
     }
@@ -14,3 +12,5 @@ export function one(paths: string) {
 
   return response;
 }
+
+export const one = (paths: string) => solution(parse(paths));

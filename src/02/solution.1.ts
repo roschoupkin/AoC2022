@@ -8,8 +8,8 @@ const MY_COMMANDS_MAP = {
   Z: EStepCost.Scissors,
 };
 
-export function one(paths: string) {
-  return parse(paths).reduce((result, commands) => {
+function solution(parsed: ReturnType<typeof parse>) {
+  return parsed.reduce((result, commands) => {
     const me = MY_COMMANDS_MAP[commands[1]];
     const rival = RIVAL_COMMAND_MAP[commands[0]];
 
@@ -27,3 +27,5 @@ export function one(paths: string) {
     return result + me + round;
   }, 0);
 }
+
+export const one = (paths: string) => solution(parse(paths));

@@ -1,5 +1,5 @@
 import { isPuzzleInput } from './guards';
-import { readPuzzle } from '../../utils/puzzle';
+import { splitPuzzle } from '../../utils/puzzle';
 
 function prepare(puzzle: [string, string]) {
   const matrix: string[][] = [];
@@ -34,7 +34,7 @@ function prepare(puzzle: [string, string]) {
 }
 
 export function parse(paths: string) {
-  const puzzle = readPuzzle(paths, '\n\n');
+  const puzzle = splitPuzzle(paths, '\n\n');
   if (isPuzzleInput(puzzle)) {
     return prepare(puzzle);
   }

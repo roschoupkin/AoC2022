@@ -1,6 +1,6 @@
 import { UnionsToTuple } from 'ts-type-helpers';
 import { MyCommands, RivalCommands } from './types';
-import { readPuzzle } from '../../utils/puzzle';
+import { splitPuzzle } from '../../utils/puzzle';
 
 const MY_COMMANDS_LIST: UnionsToTuple<MyCommands> = ['X', 'Y', 'Z'];
 const RIVAL_COMMANDS_LIST: UnionsToTuple<RivalCommands> = ['A', 'B', 'C'];
@@ -20,5 +20,5 @@ function convert(line: string): [RivalCommands, MyCommands] {
 }
 
 export function parse(paths: string) {
-  return readPuzzle(paths, '\n').map(convert);
+  return splitPuzzle(paths, '\n').map(convert);
 }

@@ -1,4 +1,4 @@
-import { readPuzzle } from '../../utils/puzzle';
+import { splitPuzzle } from '../../utils/puzzle';
 
 const isRangesLines = (candidate: string[]): candidate is [string, string] =>
   candidate.length === 2 && candidate.every(Boolean);
@@ -18,5 +18,5 @@ const convert = (line: string): [[number, number], [number, number]] => {
 };
 
 export function parse(paths: string) {
-  return readPuzzle(paths, '\n').map(convert);
+  return splitPuzzle(paths, '\n').map(convert);
 }

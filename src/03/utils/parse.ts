@@ -1,5 +1,5 @@
-import { readPuzzle } from '../../utils/puzzle';
+import { splitPuzzle } from '../../utils/puzzle';
 
 export function parse(paths: string) {
-  return readPuzzle(paths, '\n');
+  return splitPuzzle(paths, '\n');
 }
