@@ -1,13 +1,10 @@
-import { Puzzle } from '../utils/Puzzle';
-import { convertToRanges, convertToRangesLines, isFullyContain } from './utils/utils';
+import { isFullyContain } from './utils/utils';
+import { parse } from './utils/parse';
 
 export function one(paths: string) {
   let response = 0;
 
-  const { puzzle } = new Puzzle(paths)
-    .parts('\n')
-    .convert(convertToRangesLines)
-    .convert(convertToRanges);
+  const puzzle = parse(paths);
 
   for (const [left, right] of puzzle) {
     if (isFullyContain(left, right) || isFullyContain(right, left)) {

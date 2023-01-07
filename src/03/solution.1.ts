@@ -1,9 +1,8 @@
-import { Puzzle } from '../utils/Puzzle';
 import { findIntersection, getWeights } from './utils/utils';
+import { parse } from './utils/parse';
 
 export function one(paths: string) {
-  const { puzzle } = new Puzzle(paths).parts('\n');
-  return puzzle.reduce((total, line) => {
+  return parse(paths).reduce((total, line) => {
     const mid = Math.round(line.length / 2);
     const intersection = findIntersection(
       getWeights(line.substring(mid)),

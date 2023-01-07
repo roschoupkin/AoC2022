@@ -1,8 +1,8 @@
-import { Puzzle } from '../utils/Puzzle';
 import { findIntersection, getWeights } from './utils/utils';
+import { parse } from './utils/parse';
 
 export function two(paths: string) {
-  const { puzzle } = new Puzzle(paths).parts('\n');
+  const puzzle = parse(paths);
 
   let total = 0;
 
