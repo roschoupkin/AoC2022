@@ -1,7 +1,7 @@
 import * as path from 'path';
 
-import { one } from '../solution.0';
-import { two } from '../solution.1';
+import { one } from '../solution.1';
+import { two } from '../solution.2';
 
 describe('02', () => {
   test('part one', () => {

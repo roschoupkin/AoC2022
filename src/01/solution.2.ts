@@ -1,7 +1,10 @@
 import { Puzzle } from '../utils/Puzzle';
 import { convertToTotal } from './utils/utils';
 
-export function one(paths: string) {
+export function two(paths: string) {
   const { puzzle } = new Puzzle(paths).parts('\n\n').convert(convertToTotal);
-  return puzzle.reduce((largest, amount) => (amount > largest ? amount : largest), 0);
+  return puzzle
+    .sort((a, b) => a - b)
+    .slice(-3)
+    .reduce((s, v) => s + v, 0);
 }

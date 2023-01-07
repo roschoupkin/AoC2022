@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { ArrayType } from '../types/ArrayType';
+import { ArrayType } from 'ts-type-helpers';
 
 class PuzzleParts<T extends unknown[]> {
   public get puzzle() {

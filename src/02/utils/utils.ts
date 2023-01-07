@@ -1,5 +1,5 @@
 import { MyCommands, RivalCommands } from './types';
-import { UnionsToTuple } from '../../types/UnionsToTuple';
+import { UnionsToTuple } from 'ts-type-helpers';
 
 const MY_COMMANDS_LIST: UnionsToTuple<MyCommands> = ['X', 'Y', 'Z'];
 const RIVAL_COMMANDS_LIST: UnionsToTuple<RivalCommands> = ['A', 'B', 'C'];

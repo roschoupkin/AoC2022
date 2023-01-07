@@ -1,15 +1,15 @@
 import { Puzzle } from '../utils/Puzzle';
 import { convertToAction } from './utils/utils';
-import { EResultCost, EStepCost } from './utils/types';
+import { EResultCost } from './utils/types';
 import { AWAITED_TO_WIN, RIVAL_COMMAND_MAP } from './utils/consts';
 
 const MY_COMMANDS_MAP = {
-  X: EStepCost.Rock,
-  Y: EStepCost.Paper,
-  Z: EStepCost.Scissors,
+  X: EResultCost.Lose,
+  Y: EResultCost.Draw,
+  Z: EResultCost.Win,
 };
 
-export function one(paths: string) {
+export function two(paths: string) {
   const { puzzle } = new Puzzle(paths).parts('\n').convert(convertToAction);
   return puzzle.reduce((result, commands) => {
     const me = MY_COMMANDS_MAP[commands[1]];
@@ -17,12 +17,12 @@ export function one(paths: string) {
 
     const round = (() => {
       switch (me) {
-        case rival:
-          return EResultCost.Draw;
-        case AWAITED_TO_WIN[rival]:
-          return EResultCost.Win;
+        case EResultCost.Draw:
+          return rival;
+        case EResultCost.Win:
+          return AWAITED_TO_WIN[rival];
         default:
-          return EResultCost.Lose;
+          return AWAITED_TO_WIN[AWAITED_TO_WIN[rival]];
       }
     })();
 
