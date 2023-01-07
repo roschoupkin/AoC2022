@@ -11,6 +11,7 @@ describe('09', () => {
 
   test('part two', () => {
     expect(two(path.join(__dirname, 'puzzle', 'example.txt'))).toBe(1);
+    expect(two(path.join(__dirname, 'puzzle', 'larger.txt'))).toBe(36);
     expect(two(path.join(__dirname, 'puzzle', 'puzzle.txt'))).toBe(2445);
   });
 });
