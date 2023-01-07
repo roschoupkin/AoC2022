@@ -1,8 +1,8 @@
 import { parse } from './utils/parse';
-import { searchStartOfPacket } from './utils/utils';
+import { answer } from './utils/answer';
 
 function solution(parsed: ReturnType<typeof parse>) {
-  return searchStartOfPacket(parsed, 4);
+  return answer(parsed, 4);
 }
 
 export const one = (paths: string) => solution(parse(paths));

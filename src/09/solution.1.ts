@@ -1,8 +1,8 @@
 import { parse } from './utils/parse';
-import { run } from './utils/utils';
+import { answer } from './utils/answer';
 
 function solution(parsed: ReturnType<typeof parse>) {
-  return run(parsed, 2);
+  return answer(parsed, 2);
 }
 
 export const one = (paths: string) => solution(parse(paths));
