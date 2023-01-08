@@ -21,6 +21,7 @@
     "test:09": "npm run test -- -t=09",
     "test:10": "npm run test -- -t=10",
     "test:11": "npm run test -- -t=11",
+    "test:12": "npm run test -- -t=12",
     "prepare": "husky install"
   },
   "devDependencies": {
