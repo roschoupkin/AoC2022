@@ -31,6 +31,7 @@
     "test:22": "npm run test -- -t=22",
     "test:23": "npm run test -- -t=23",
     "test:24": "npm run test -- -t=24",
+    "test:25": "npm run test -- -t=25",
     "test": "jest",
     "lint": "eslint --fix .",
     "format": "prettier --write .",
