@@ -3,8 +3,10 @@ import * as path from 'path';
 import { one } from './solution.1';
 
 describe('22', () => {
-  test('part one', () => {
-    expect(one(path.join(__dirname, 'puzzle', 'example.txt'))).toBe(6032);
-    expect(one(path.join(__dirname, 'puzzle', 'puzzle.txt'))).toBe(136054);
+  test.each([
+    ['example.txt', 6032],
+    ['puzzle.txt', 136054],
+  ])('part one with file %s', (file, expectation) => {
+    expect(one(path.join(__dirname, 'puzzle', file))).toBe(expectation);
   });
 });

@@ -4,14 +4,18 @@ import { one } from './solution.1';
 import { two } from './solution.2';
 
 describe('09', () => {
-  test('part one', () => {
-    expect(one(path.join(__dirname, 'puzzle', 'example.txt'))).toBe(13);
-    expect(one(path.join(__dirname, 'puzzle', 'puzzle.txt'))).toBe(5902);
+  test.each([
+    ['example.txt', 13],
+    ['puzzle.txt', 5902],
+  ])('part one with file %s', (file, expectation) => {
+    expect(one(path.join(__dirname, 'puzzle', file))).toBe(expectation);
   });
 
-  test('part two', () => {
-    expect(two(path.join(__dirname, 'puzzle', 'example.txt'))).toBe(1);
-    expect(two(path.join(__dirname, 'puzzle', 'larger.txt'))).toBe(36);
-    expect(two(path.join(__dirname, 'puzzle', 'puzzle.txt'))).toBe(2445);
+  test.each([
+    ['example.txt', 1],
+    ['larger.txt', 36],
+    ['puzzle.txt', 2445],
+  ])('part two with file %s', (file, expectation) => {
+    expect(two(path.join(__dirname, 'puzzle', file))).toBe(expectation);
   });
 });

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`10 part two 1`] = `
+exports[`10 part two with file example.txt 1`] = `
 "
 ##..##..##..##..##..##..##..##..##..##..
 ###...###...###...###...###...###...###.
@@ -11,7 +11,7 @@ exports[`10 part two 1`] = `
 "
 `;
 
-exports[`10 part two 2`] = `
+exports[`10 part two with file puzzle.txt 1`] = `
 "
 ###....##.####.###..#..#.###..####.#..#.
 #..#....#.#....#..#.#..#.#..#.#....#..#.

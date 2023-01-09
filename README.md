@@ -1,51 +1,30 @@
-# typesafe-react-routes
+# Advent of Code 2022
 
-Inspired by [typesafe-react-router](https://github.com/AveroLLC/typesafe-react-router).
-A set of types and utility functions to simplify routing using types in react-router.
+The repository with my solutions for Advent of Code 2022
+All solutions were made with Typescript and test covered by jest
 
-## Installation
-
-```bash
-npm install typesafe-routes
-```
-
-## Motivation
-
-- Typifies gives necessary type for a route and errors with incorrect usage
-- You can quickly add a new section of route with `extendWith`
-- Allows you not to forget named parameters, will work out the TS error when creating
-- Allows you to specify query parameters that should be used on a page
-
-## Example of usage
-
-```tsx
-import { route, param } from 'typesafe-router';
-
-/**
- * Initialize routes
- */
-const items = route('items');
-const itemsEdit = items.extendWith(param('id'));
-const itemsList = route('items', param('component')).withQueryParams('page');
-
-/**
- * Usage in routes:
- * items.template() -> /items
- * itemsEdit.template() -> /items/:id
- * itemsList.template() -> /items/:component
- */
-
-<Route path={itemsList.template()} component={ListPage} />
-<Route path={itemsEdit.template()} component={EditPage} />
-<Redirect path={items.template()} to={itemsList.create({ component: 'tab' })} />
-
-/**
- * Usage in links:
- * itemsList.create({}, { page: '1' }) -> /items?page=1
- * itemsEdit.create({ id: '1' }) -> /items/1
- */
-
-<a href={items.create({})}>Root</a>
-<a href={itemsList.create({ component: 'tab' }, { page: '1' })}>List</a>
-<a href={itemsEdit.create({ id: '1' })}>Edit</a>
-```
+- [Day 1: Calorie Counting](src/01/README.md)
+- [Day 2: Rock Paper Scissors](src/02/README.md)
+- [Day 3: Rucksack Reorganization](src/03/README.md)
+- [Day 4: Camp Cleanup](src/04/README.md)
+- [Day 5: Supply Stacks](src/05/README.md)
+- [Day 6: Tuning Trouble](src/06/README.md)
+- [Day 7: No Space Left On Device](src/07/README.md)
+- [Day 8: Treetop Tree House](src/08/README.md)
+- [Day 9: Rope Bridge](src/09/README.md)
+- [Day 10: Cathode-Ray Tube](src/10/README.md)
+- [Day 11: Monkey in the Middle](src/11/README.md)
+- [Day 12: Hill Climbing Algorithm](src/12/README.md)
+- [Day 13: Distress Signal](src/13/README.md)
+- [Day 14: Regolith Reservoir](src/14/README.md)
+- [Day 15: Beacon Exclusion Zone](src/15/README.md)
+- [Day 16: Proboscidea Volcanium](src/16/README.md)
+- [Day 17: Pyroclastic Flow](src/17/README.md)
+- [Day 18: Boiling Boulders](src/18/README.md)
+- [Day 19: Not Enough Minerals](src/19/README.md)
+- [Day 20: Grove Positioning System](src/20/README.md)
+- [Day 21: Monkey Math](src/21/README.md)
+- [Day 22: Monkey Map](src/22/README.md)
+- [Day 23: Unstable Diffusion](src/23/README.md)
+- [Day 24: Blizzard Basin](src/24/README.md)
+- [Day 25: Full of Hot Air](src/25/README.md)
