@@ -1,10 +1,10 @@
 import { parse } from './utils/parse';
-import { AnswerHelper } from './utils/AnswerHelper';
+import { Context } from './utils/Context';
 
 const combinations = (list: string[]) =>
   list.reduce<string[][]>((a, v) => a.concat(a.map((r) => [v].concat(r))), [[]]);
 
-function calcTogether(answer: AnswerHelper, current: string, time: number, list: string[]) {
+function calcTogether(answer: Context, current: string, time: number, list: string[]) {
   let value = 0;
 
   for (const valves of combinations(list)) {
@@ -28,7 +28,7 @@ function calcTogether(answer: AnswerHelper, current: string, time: number, list:
 }
 
 function solution({ movesMap, ratesMap, ratedSet }: ReturnType<typeof parse>) {
-  const answer = new AnswerHelper(movesMap, ratesMap);
+  const answer = new Context(movesMap, ratesMap);
   return calcTogether(answer, 'AA', 26, [...ratedSet.keys()]);
 }
 

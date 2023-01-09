@@ -1,4 +1,4 @@
-export class AnswerHelper {
+export class Context {
   private readonly memoization = new Map<string, number>();
 
   constructor(
