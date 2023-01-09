@@ -1,11 +1,11 @@
 import { parse } from './utils/parse';
 import { isCorrectPackets } from './utils/utils';
 
-function solution(p: ReturnType<typeof parse>) {
+function solution(parsed: ReturnType<typeof parse>) {
   const dividers = [[[2]], [[6]]];
   const dividerPackets = dividers.map((key) => JSON.stringify(key));
 
-  const sorted = [...p, ...dividers]
+  const sorted = [...parsed, ...dividers]
     .sort((a, b) => {
       const decision = isCorrectPackets([a, b]);
       if (typeof decision === 'boolean') {

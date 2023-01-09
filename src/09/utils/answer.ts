@@ -59,8 +59,6 @@ export function answer(commands: string[], size: number) {
     const tail = shift[shift.length - 1];
     if (tail !== undefined) {
       response.add([tail.x, tail.y].join('.'));
-    } else {
-      throw new Error('WTF?');
     }
   }
 

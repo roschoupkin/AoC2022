@@ -16,7 +16,7 @@ function convert(line: string): [RivalCommands, MyCommands] {
   if (isCommandsTuple(commands)) {
     return commands;
   }
-  throw new Error('Wrong line');
+  throw new Error('Wrong input');
 }
 
 export function parse(paths: string) {
